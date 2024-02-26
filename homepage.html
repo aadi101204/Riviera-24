@@ -55,6 +55,7 @@
             height: 100%;
             fill: #00ffee;
             animation: spin 1s linear infinite;
+            margin-top: 25px;
         }
         @keyframes spin {
             100% { transform: rotate(360deg); }
@@ -77,7 +78,7 @@
         function startGame() {
             document.querySelector('.container').style.animation = 'fadeOut 1s ease';
             setTimeout(() => {
-                window.location.href = '/rules';
+                window.location.href = 'rules.html';
             }, 1000);
         }
     </script>
