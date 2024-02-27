@@ -194,8 +194,8 @@
 
   <script>
     const riddles = [
-      { question: "Riddle 1: I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?", hint: "Hint: Think about something that can carry sound.", answer: "echo", timerDuration: 10 },
-      { question: "Riddle 2: What has keys but can't open locks?", hint: "Hint: It's something you use every day.", answer: "piano", timerDuration: 15 }
+      { question: "Riddle 1: I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?", hint: "Hint: Think about something that can carry sound.", answer: "echo", timerDuration: 30 },
+      { question: "Riddle 2: What has keys but can't open locks?", hint: "Hint: It's something you use every day.", answer: "piano", timerDuration: 30 }
       // Add more riddles as needed
     ];
 
@@ -305,7 +305,7 @@
          </div>
         </div>`;
       console.log("User Answers:", userAnswers);
-      fadeOutAndRedirect('homepage.html', 3000);
+      fadeOutAndRedirect('homepage.html', 10000);
     }
 
     function fadeOutAndRedirect(url, delay) {
