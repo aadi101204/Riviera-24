@@ -120,6 +120,53 @@
         opacity: 1;
       }
     }
+
+    .congratulation-message {
+      background-color: #001f3f;
+      color: #00ffee;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 238, 0.5);
+      animation: neonBlink 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonBlink {
+      0% {
+        box-shadow: 0 0 10px rgba(0, 255, 238, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(0, 255, 238, 0.5), 0 0 30px rgba(0, 255, 238, 0.5), 0 0 40px rgba(0, 255, 238, 0.5);
+      }
+    }
+
+    .congratulation-message h2 {
+      animation: neonGlow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonGlow {
+      0% {
+        text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
+      }
+      100% {
+        text-shadow: 0 0 20px #00ffee, 0 0 40px #00ffee, 0 0 60px #00ffee;
+      }
+    }
+
+    .congratulation-message p {
+      animation: neonFloat 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes neonFloat {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -191,7 +238,7 @@
       if (answer === correctAnswer) {
         if (currentRiddleIndex === riddles.length - 1) {
           clearInterval(timerInterval);
-          showCongratulationMessage();
+          showCongratulationMessageAndRedirect(true);
         } else {
           currentRiddleIndex++;
           showRiddles();
@@ -200,6 +247,10 @@
         const hint = document.querySelector(".hint");
         hint.style.display = "block";
         answerInput.value = "";
+        if (currentRiddleIndex === riddles.length - 1) {
+          clearInterval(timerInterval);
+          showCongratulationMessageAndRedirect(false);
+        }
       }
     }
 
@@ -226,8 +277,7 @@
               currentRiddleIndex++;
               showRiddles();
             } else {
-              showCongratulationMessage();
-              fadeOutAndRedirect('homepage.html', 3000);
+              showCongratulationMessageAndRedirect(false);
             }
           }, 1000);
         }
@@ -244,10 +294,18 @@
       answerInput.value = "";
     }
 
-    function showCongratulationMessage() {
+    function showCongratulationMessageAndRedirect(correct) {
       const carouselInner = document.querySelector("#game-section .carousel-inner");
-      carouselInner.innerHTML = "<h2 class='neon'>Congratulations! You've successfully completed the escape room game!</h2>";
+      carouselInner.innerHTML = `
+        <div class="carousel-item fade-in active">
+          <div class="congratulation-message">
+            <h2 class="neon">Congratulations!</h2>
+            <p class="neon">You've ${correct ? 'successfully' : 'unsuccessfully'} completed the escape room game!</p>
+            <p class="neon">You are now a master of the Sci-Fi universe!</p>
+         </div>
+        </div>`;
       console.log("User Answers:", userAnswers);
+      fadeOutAndRedirect('homepage.html', 3000);
     }
 
     function fadeOutAndRedirect(url, delay) {
@@ -262,6 +320,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
