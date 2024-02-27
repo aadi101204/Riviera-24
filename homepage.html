@@ -62,11 +62,11 @@
             100% { transform: rotate(360deg); }
         }
         @keyframes lightChange {
-            0% { fill: #00ffee; }
-            25% { fill: #ff00ff; }
-            50% { fill: #00ffcc; }
-            75% { fill: #ff6600; }
-            100% { fill: #00ffee; }
+            0% { fill: red; } /* Start with red */
+            25% { fill: #00e5ff; } /* Change to cyan */
+            50% { fill: red; } /* Back to red */
+            75% { fill: #00eaff; } /* Change to cyan */
+            100% { fill: red; } /* Back to red */
         }
         @keyframes fadeInUp {
             from {

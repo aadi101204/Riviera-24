@@ -120,51 +120,6 @@
         opacity: 1;
       }
     }
-
-    /* Additional styles for the congratulation message page */
-    .congratulation-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .confetti {
-      position: relative;
-      width: 20px;
-      height: 20px;
-      background-color: #ff00ff;
-      animation: confetti-fall 3s ease infinite;
-    }
-
-    .confetti:before, .confetti:after {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background-color: #ff00ff;
-      animation: confetti-fall 3s ease infinite;
-    }
-
-    .confetti:before {
-      left: -25px;
-      transform: rotate(45deg);
-    }
-
-    .confetti:after {
-      left: 25px;
-      transform: rotate(-45deg);
-    }
-
-    @keyframes confetti-fall {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(100vh);
-      }
-    }
   </style>
 </head>
 <body>
@@ -291,16 +246,7 @@
 
     function showCongratulationMessage() {
       const carouselInner = document.querySelector("#game-section .carousel-inner");
-      carouselInner.innerHTML = `
-        <div class="congratulation-page">
-          <h2 class='neon'>Congratulations! You've successfully completed the escape room game!</h2>
-          <div class="confetti"></div>
-          <div class="confetti"></div>
-          <div class="confetti"></div>
-          <div class="confetti"></div>
-          <div class="confetti"></div>
-        </div>
-      `;
+      carouselInner.innerHTML = "<h2 class='neon'>Congratulations! You've successfully completed the escape room game!</h2>";
       console.log("User Answers:", userAnswers);
     }
 
@@ -316,7 +262,6 @@
   </script>
 </body>
 </html>
-
 
 
 
