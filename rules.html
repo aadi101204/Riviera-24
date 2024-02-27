@@ -17,12 +17,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 50px;
+      background-image: url('https://images.unsplash.com/photo-1529008484082-5fc0a52e478b');
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
     .container {
       width: 80%;
       margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
     }
 
     h1 {
@@ -83,6 +88,7 @@
       transition: background-color 0.3s;
       text-decoration: none;
       display: inline-block;
+      margin-top: 20px;
     }
 
     .start-button:hover {
@@ -90,8 +96,16 @@
     }
 
     .icon {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin-right: 10px;
+    }
+
+    .rocket {
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -101,8 +115,10 @@
     <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Rule 1 description.</p>
     <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Rule 2 description.</p>
     <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Rule 3 description.</p>
-    <a href="quizpage.html" class="start-button"><i class="fas fa-rocket icon"></i> Let's Start</a>
+    <a href="quizpage.html" class="start-button"><i class="fas fa-rocket icon rocket"></i> Let's Start</a>
   </div>
 </body>
 </html>
+
+
 
