@@ -102,6 +102,11 @@
       <div class="carousel-inner">
         <!-- Riddle and hint panels will be dynamically updated by JavaScript -->
       </div>
+      <div class="answer-panel" style="display: none;">
+        <!-- Panel to display the answer when the timer stops -->
+        <h2>Time's up! Here's the answer:</h2>
+        <p class="answer"></p>
+      </div>
       <a class="carousel-control-prev" href="#game-section" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -114,7 +119,6 @@
   </div>
 
   <script>
-    // Define the riddles and hints with timer durations
     const riddles = [
       { question: "Riddle 1: I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?", hint: "Hint: Think about something that can carry sound.", answer: "echo", timerDuration: 10 },
       { question: "Riddle 2: What has keys but can't open locks?", hint: "Hint: It's something you use every day.", answer: "piano", timerDuration: 15 }
@@ -123,8 +127,8 @@
 
     let currentRiddleIndex = 0;
     let timerInterval;
-    let timerRunning = true; // Flag to track whether the timer is running
-    let userAnswers = []; // Array to hold user answers
+    let timerRunning = true;
+    let userAnswers = [];
 
     function startGame() {
       showRiddles();
@@ -139,13 +143,13 @@
 
       const activeClass = "active";
       carouselInner.innerHTML += `
-        <div class="carousel-item ${activeClass}">
-          <h2>${riddle.question}</h2>
-          <input type="text" class="answer-input" placeholder="Your Answer" />
-          <button onclick="checkAnswer(${timerDuration})">Submit</button>
-          <p class="hint" style="display: none;">${riddle.hint}</p>
-        </div>
-      `;
+      <div class="carousel-item ${activeClass}">
+        <h2>${riddle.question}</h2>
+        <input type="text" class="answer-input" placeholder="Your Answer" />
+        <button onclick="checkAnswer(${timerDuration})">Submit</button>
+        <p class="hint" style="display: none;">${riddle.hint}</p>
+      </div>
+    `;
 
       startTimer(timerDuration);
     }
@@ -155,7 +159,7 @@
       const answer = answerInput.value.trim().toLowerCase();
       const correctAnswer = riddles[currentRiddleIndex].answer;
 
-      userAnswers.push(answer); // Store user answer
+      userAnswers.push(answer);
 
       if (answer === correctAnswer) {
         if (currentRiddleIndex === riddles.length - 1) {
@@ -173,7 +177,7 @@
     }
 
     function startTimer(duration) {
-      clearInterval(timerInterval); // Clear any existing interval
+      clearInterval(timerInterval);
       let secondsLeft = duration;
       const timerElement = document.createElement("div");
       timerElement.classList.add("timer");
@@ -188,7 +192,7 @@
 
         if (secondsLeft === 0) {
           clearInterval(timerInterval);
-          timerRunning = false; // Set timerRunning flag to false when timer stops
+          timerRunning = false;
           setTimeout(() => {
             showAnswer();
             if (currentRiddleIndex < riddles.length - 1) {
@@ -197,30 +201,34 @@
             } else {
               showCongratulationMessage();
             }
-          }, 10000); // Wait for 10 seconds after the timer stops
+          }, 10000);
         }
       }, 1000);
     }
 
     function showAnswer() {
       const answerInput = document.querySelector(".answer-input");
-      answerInput.value = riddles[currentRiddleIndex].answer;
-      const hint = document.querySelector(".hint");
-      hint.style.display = "block";
+      const answerPanel = document.querySelector(".answer-panel");
+      const answerText = document.querySelector(".answer");
+
+      answerPanel.style.display = "block";
+      answerText.textContent = riddles[currentRiddleIndex].answer;
+      answerInput.value = "";
     }
 
     function showCongratulationMessage() {
       const carouselInner = document.querySelector("#game-section .carousel-inner");
       carouselInner.innerHTML = "<h2 class='neon'>Congratulations! You've successfully completed the escape room game!</h2>";
-      // Display user answers
       console.log("User Answers:", userAnswers);
     }
 
-    // Start the game when the page loads
     window.onload = startGame;
   </script>
 </body>
 </html>
+
+
+
 
 
 
