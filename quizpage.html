@@ -93,6 +93,32 @@
     .carousel-item {
       text-align: left;
     }
+
+    .fade-out {
+      animation: fadeOut 1s ease;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -143,7 +169,7 @@
 
       const activeClass = "active";
       carouselInner.innerHTML += `
-      <div class="carousel-item ${activeClass}">
+      <div class="carousel-item fade-in ${activeClass}">
         <h2>${riddle.question}</h2>
         <input type="text" class="answer-input" placeholder="Your Answer" />
         <button onclick="checkAnswer(${timerDuration})">Submit</button>
@@ -200,8 +226,9 @@
               showRiddles();
             } else {
               showCongratulationMessage();
+              fadeOutAndRedirect('homepage.html', 3000);
             }
-          }, 10000);
+          }, 1000);
         }
       }, 1000);
     }
@@ -222,10 +249,21 @@
       console.log("User Answers:", userAnswers);
     }
 
+    function fadeOutAndRedirect(url, delay) {
+      const gameSection = document.getElementById('game-section');
+      gameSection.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = url;
+      }, delay);
+    }
+
     window.onload = startGame;
   </script>
 </body>
 </html>
+
+
+
 
 
 
