@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>General Rules - Sci-Fi Escape Room</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       background-color: #000;
@@ -18,49 +19,60 @@
       align-items: center;
       padding-top: 50px;
     }
+
     .container {
       width: 80%;
       margin: 0 auto;
     }
+
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
       animation: roverEffect 5s infinite alternate ease-in-out;
     }
+
     p {
       font-size: 1.5rem;
       margin-bottom: 30px;
       animation: roverEffect 5s infinite alternate ease-in-out;
     }
+
     .rule-item {
       animation: fadeIn 1s ease;
     }
+
     .neon {
       color: #00ffee;
       text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
       transition: color 0.3s;
     }
+
     .neon:hover {
       color: #ff00ff;
     }
+
     @keyframes roverEffect {
       0% {
         transform: translateY(0);
       }
+
       100% {
         transform: translateY(-5px);
       }
     }
+
     @keyframes fadeIn {
       0% {
         opacity: 0;
         transform: translateY(-20px);
       }
+
       100% {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
     .start-button {
       padding: 10px 20px;
       background-color: #00ffee;
@@ -69,19 +81,28 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
+      text-decoration: none;
+      display: inline-block;
     }
+
     .start-button:hover {
       background-color: #ff00ff;
+    }
+
+    .icon {
+      font-size: 2rem;
+      margin-right: 10px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>General Rules</h1>
-    <p class="rule-item neon">1. Rule 1 description.</p>
-    <p class="rule-item neon">2. Rule 2 description.</p>
-    <p class="rule-item neon">3. Rule 3 description.</p>
-    <a href="quizpage.html" class="start-button">Let's Start</a>
+    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Rule 1 description.</p>
+    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Rule 2 description.</p>
+    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Rule 3 description.</p>
+    <a href="quizpage.html" class="start-button"><i class="fas fa-rocket icon"></i> Let's Start</a>
   </div>
 </body>
 </html>
+
