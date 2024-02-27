@@ -1,91 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>General Rules - Sci-Fi Escape Room</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        background-color: #000;
-        color: #00ffee;
-        font-family: "Orbitron", sans-serif; /* Use the Orbitron font for a sci-fi feel */
-        text-align: center;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 50px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>General Rules - Sci-Fi Escape Room</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #000;
+      color: #00ffee;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 50px;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: roverEffect 5s infinite alternate ease-in-out;
+    }
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      animation: roverEffect 5s infinite alternate ease-in-out;
+    }
+    .rule-item {
+      animation: fadeIn 1s ease;
+    }
+    .neon {
+      color: #00ffee;
+      text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
+      transition: color 0.3s;
+    }
+    .neon:hover {
+      color: #ff00ff;
+    }
+    @keyframes roverEffect {
+      0% {
+        transform: translateY(0);
       }
-      .container {
-        width: 80%;
-        margin: 0 auto;
+      100% {
+        transform: translateY(-5px);
       }
-      h1 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        animation: roverEffect 5s infinite alternate ease-in-out; /* Apply rover effect animation */
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
       }
-      p {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-        animation: roverEffect 5s infinite alternate ease-in-out; /* Apply rover effect animation */
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
-      .rule-item {
-        animation: fadeIn 1s ease; /* Apply fade-in animation */
-      }
-      .neon {
-        color: #00ffee;
-        text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee; /* Apply neon light effect */
-        transition: color 0.3s; /* Add transition for smoother color change */
-      }
-      .neon:hover {
-        color: #ff00ff; /* Change color on hover */
-      }
-      @keyframes roverEffect {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-5px); /* Move text up slightly */
-        }
-      }
-      @keyframes fadeIn {
-        0% {
-          opacity: 0;
-          transform: translateY(-20px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>General Rules</h1>
-      <p class="rule-item neon">1. Rule 1 description.</p>
-      <p class="rule-item neon">2. Rule 2 description.</p>
-      <p class="rule-item neon">3. Rule 3 description.</p>
-      <div
-        class="neon interactive-panel"
-        style="
-          width: 200px;
-          height: 100px;
-          background-color: #333;
-          margin: 20px auto;
-        "
-      >
-        <p style="line-height: 100px">Let start!</p>
-      </div>
-    </div>
-  </body>
+    }
+    .start-button {
+      padding: 10px 20px;
+      background-color: #00ffee;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .start-button:hover {
+      background-color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>General Rules</h1>
+    <p class="rule-item neon">1. Rule 1 description.</p>
+    <p class="rule-item neon">2. Rule 2 description.</p>
+    <p class="rule-item neon">3. Rule 3 description.</p>
+    <a href="quizpage.html" class="start-button">Let's Start</a>
+  </div>
+</body>
 </html>
