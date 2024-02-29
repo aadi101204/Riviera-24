@@ -1,125 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>General Rules - Sci-Fi Escape Room</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    body {
-      background-color: #000;
-      color: #00ffee;
-      font-family: 'Orbitron', sans-serif;
-      text-align: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: url('https://images.unsplash.com/photo-1529008484082-5fc0a52e478b');
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-
-    .container {
-      width: 80%;
-      margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: roverEffect 5s infinite alternate ease-in-out;
-    }
-
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-      animation: roverEffect 5s infinite alternate ease-in-out;
-    }
-
-    .rule-item {
-      animation: fadeIn 1s ease;
-    }
-
-    .neon {
-      color: #00ffee;
-      text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
-      transition: color 0.3s;
-    }
-
-    .neon:hover {
-      color: #ff00ff;
-    }
-
-    @keyframes roverEffect {
-      0% {
-        transform: translateY(0);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Rules - Sci-Fi Escape Room</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #000;
+        color: #00ffee;
+        font-family: "Orbitron", sans-serif;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://images.unsplash.com/photo-1529008484082-5fc0a52e478b");
+        background-size: cover;
+        background-repeat: no-repeat;
       }
 
-      100% {
-        transform: translateY(-5px);
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(-20px);
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
       }
 
-      100% {
-        opacity: 1;
-        transform: translateY(0);
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        animation: roverEffect 5s infinite alternate ease-in-out;
       }
-    }
 
-    .start-button {
-      padding: 10px 20px;
-      background-color: #00ffee;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-    }
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+        animation: roverEffect 5s infinite alternate ease-in-out;
+      }
 
-    .start-button:hover {
-      background-color: #ff00ff;
-    }
+      .rule-item {
+        animation: fadeIn 1s ease;
+      }
 
-    .icon {
-      font-size: 1.5rem;
-      margin-right: 10px;
-    }
+      .neon {
+        color: #00ffee;
+        /* text-shadow: 0 0 5px #00ffee, 0 0 10px #00ffee, 0 0 15px #00ffee; */
+        transition: color 0.3s;
+      }
 
-    .rocket {
-      animation: spin 2s linear infinite;
-    }
+      .neon:hover {
+        text-shadow: 0 0 0px #00ffee, 0 0 0px #00ffee, 0 0 20px #00ffee;
+      }
 
-    @keyframes spin {
-      100% { transform: rotate(360deg); }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>General Rules</h1>
-    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> You are not locked in. Let us know if you need to leave at any time.</p>
-    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> All phones except one per team need to be left outside the room on the table. Bags as well.</p>
-    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> You have 15 minutes to escape.</p>
-    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Do not share anything regarding the puzzles, hints or clues to others.</p>
-    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Be careful handling props; any damages will be charged to the team.</p>
-    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> Once you have found a clue, please put back the props that you have used in their original place.</p>
-    <p class="rule-item neon"><i class="fas fa-check-circle icon"></i> We will give you some hints, however you will be charged with a penalty of 20 sec for each hint.</p>
-    <a href="quizpage.html" class="start-button"><i class="fas fa-rocket icon rocket"></i> Let's Start</a>
-  </div>
-</body>
+      @keyframes roverEffect {
+        0% {
+          transform: translateY(0);
+        }
+
+        100% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes launch {
+        0% {
+          transform: translateY(2.5px);
+        }
+        50% {
+          transform: translateY(-2.5px);
+        }
+        100% {
+          transform: translateY(2.5px);
+        }
+      }
+
+      .rocket {
+        animation: launch 2s ease-in-out infinite;
+      }
+
+      .start-button {
+        padding: 10px 20px;
+        background-color: #00ffee;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .start-button:hover {
+        background-color: red;
+        color: white;
+      }
+
+      .icon {
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+
+      /* .rocket {
+        animation: spin 2s linear infinite;
+      } */
+
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>General Rules</h1>
+      <p class="rule-item neon">
+        <i class="fas fa-check-circle icon"></i> You are not locked in. Let us
+        know if you need to leave at any time.
+      </p>
+      <p class="rule-item neon">
+        <i class="fas fa-check-circle icon"></i> All phones except one per team
+        need to be left outside the room on the table. Bags as well.
+      </p>
+      <p class="rule-item neon">
+        <i class="fas fa-check-circle icon"></i> You have 15 minutes to escape.
+      </p>
+      <p class="rule-item neon">
+        <i class="fas fa-check-circle icon"></i> Do not share anything regarding
+        the puzzles, hints or clues to others.
+      </p>
+      <p class="rule-item neon">
+        <i class="fas fa-check-circle icon"></i> Be careful handling props; any
+        damages will be charged to the team.
+      </p>
+      <p class="rule-item neon">
+        <i class="fas fa-check-circle icon"></i> Once you have found a clue,
+        please put back the props that you have used in their original place.
+      </p>
+      <p class="rule-item neon">
+        <i class="fas fa-check-circle icon"></i> We will give you some hints,
+        however you will be charged with a penalty of 20 sec for each hint.
+      </p>
+      <a href="clues.html" class="start-button"
+        ><i class="fas fa-rocket icon rocket"></i> Let's Start</a
+      >
+    </div>
+  </body>
 </html>

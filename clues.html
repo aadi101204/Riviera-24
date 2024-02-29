@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape The Killer</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #000;
+        color: #00ffee;
+        font-family: "Orbitron", sans-serif;
+        text-align: center;
+        padding: 24px;
+      }
+
+      .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        animation: roverEffect 5s infinite alternate ease-in-out;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 64px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #00ffee;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #00ffee;
+        color: #000;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: red;
+        color: white;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 30px;
+        animation: roverEffect 5s infinite alternate ease-in-out;
+      }
+
+      .neon {
+        text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
+        transition: color 0.3s;
+      }
+
+      .neon:hover {
+        color: #ff00ff;
+      }
+
+      @keyframes roverEffect {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .timer {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .timer i {
+        font-size: 3rem;
+        margin-right: 10px;
+      }
+
+      .carousel-item {
+        text-align: left;
+      }
+
+      .fade-out {
+        animation: fadeOut 1s ease;
+      }
+
+      .fade-in {
+        animation: fadeIn 1s ease;
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .congratulation-message {
+        background-color: #001f3f;
+        color: #00ffee;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 255, 238, 0.5);
+        animation: neonBlink 1s ease-in-out infinite alternate;
+      }
+
+      @keyframes neonBlink {
+        0% {
+          box-shadow: 0 0 10px rgba(0, 255, 238, 0.5);
+        }
+        100% {
+          box-shadow: 0 0 20px rgba(0, 255, 238, 0.5),
+            0 0 30px rgba(0, 255, 238, 0.5), 0 0 40px rgba(0, 255, 238, 0.5);
+        }
+      }
+
+      .congratulation-message h2 {
+        animation: neonGlow 1s ease-in-out infinite alternate;
+      }
+
+      @keyframes neonGlow {
+        0% {
+          text-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee, 0 0 30px #00ffee;
+        }
+        100% {
+          text-shadow: 0 0 20px #00ffee, 0 0 40px #00ffee, 0 0 60px #00ffee;
+        }
+      }
+
+      .congratulation-message p {
+        animation: neonFloat 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes neonFloat {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      .task {
+        display: none;
+      }
+      .task.active {
+        display: block;
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-buttons {
+        position: absolute;
+        bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Escape The Killer</h1>
+    <div id="task1" class="task active">
+      <h2>1st Task</h2>
+      <p>(1) Solve the cube</p>
+      <p>(2) Look for the sign</p>
+    </div>
+    <div id="task2" class="task">
+      <h2>2nd Task</h2>
+      <p>(1) Drawings are important but so are the colours</p>
+      <p>(2) The numbers are coloured</p>
+    </div>
+    <div id="task3" class="task">
+      <h2>3rd Task</h2>
+      <p>(1) Find the drawings in real life, it holds your second secret</p>
+    </div>
+    <div id="task4" class="task">
+      <h2>4th Task</h2>
+      <p>
+        (1) Colours play an important role in our life (it has your 3rd secret)
+      </p>
+      <p>(2) P.S: The killer is hiding somewhere in this level</p>
+    </div>
+    <div id="task5" class="task">
+      <h2>5th Task</h2>
+      <p>(1) Look around the room for your last clue and the last secret.</p>
+    </div>
+    <div class="center">
+      <div class="nav-buttons">
+        <button onclick="changeTask(-1)">Previous</button>
+        <button onclick="changeTask(1)">Next</button>
+      </div>
+    </div>
+    <script>
+      var tasks = Array.from(document.getElementsByClassName("task"));
+      var currentTaskIndex = 0;
+
+      function changeTask(direction) {
+        tasks[currentTaskIndex].classList.remove("active");
+        currentTaskIndex =
+          (currentTaskIndex + direction + tasks.length) % tasks.length;
+        tasks[currentTaskIndex].classList.add("active");
+      }
+    </script>
+  </body>
+</html>
